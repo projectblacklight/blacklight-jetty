@@ -1,1 +1,2 @@
 solr/data/*
+logs/*.log
