@@ -236,6 +236,7 @@
       <filter-name>FinalizeFilter</filter-name>
       <filter-class>fedora.server.security.servletfilters.FilterFinalize</filter-class>
     </filter>
+<!--
     <filter>
       <filter-name>AuthFilterJAAS</filter-name>
       <filter-class>org.fcrepo.server.jaas.AuthFilterJAAS</filter-class>
@@ -251,6 +252,7 @@
         <param-value>/getDS</param-value>
       </init-param>
     </filter>
+-->
     <filter-mapping>
       <filter-name>SetupFilter</filter-name>
       <url-pattern>/*</url-pattern>
