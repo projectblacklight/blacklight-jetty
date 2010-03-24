@@ -6,7 +6,7 @@
     </listener>
     <context-param>
       <param-name>fedora.home</param-name>
-      <param-value><SystemProperty name="jetty.home" default="."/>/fedora/default</param-value>
+      <param-value>./fedora/default</param-value>
     </context-param>
     <servlet>
       <display-name>Apache-Axis Servlet</display-name>
