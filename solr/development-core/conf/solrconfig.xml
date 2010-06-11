@@ -380,7 +380,7 @@
   <str name="qf">id^0.8 id_t^0.8 format text^0.3</str>
    <str name="pf">id^0.9  id_t^0.9 text^0.5</str>
       <str name="fl">
-        id,text,title_t,date_t,year_facet,month_facet,medium_t,series_facet,box_facet,folder_facet
+        id,text,title_t,date_t,year_facet,month_facet,medium_t,series_facet,box_facet,folder_facet,has_model_s
      </str>
      <str name="mm">
         2&lt;-1 5&lt;-2 6&lt;90%
@@ -411,7 +411,7 @@
       <str name="qf">id^0.8 id_t^0.8 format text^0.3</str>
        <str name="pf">id^0.9  id_t^0.9 text^0.5</str>
      <str name="fl">
-        id,text,title_t,date_t,year_facet,month_facet,medium_t,series_facet,box_facet,folder_facet
+        id,text,title_t,date_t,year_facet,month_facet,medium_t,series_facet,box_facet,folder_facet,has_model_s
      </str>
      <str name="mm">
         2&lt;-1 5&lt;-2 6&lt;90%
