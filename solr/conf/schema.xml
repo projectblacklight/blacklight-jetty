@@ -4,7 +4,7 @@
     http://wiki.apache.org/solr/SchemaXml.  The page also has a link to an 
     extensively commented version of this file.
 -->
-<schema name="Blacklight Demo Index" version="2.4">
+<schema name="Blacklight Demo Index" version="1.2">
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" omitNorms="true"/>
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true"/>
