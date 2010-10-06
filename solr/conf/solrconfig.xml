@@ -221,6 +221,13 @@
       <str name="echoParams">explicit</str>      
       <str name="q.alt">*:*</str>
       <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
+      <!-- this qf and pf are used by default, if not otherwise specified by
+           client. The default blacklight_config will use these for the
+           "keywords" search. See the author_qf/author_pf, title_qf, etc 
+           below, which the default blacklight_config will specify for
+           those searches. You may also be interested in:
+           http://wiki.apache.org/solr/LocalParams
+      -->
       <str name="qf">
         title_unstem_search^100000
         subtitle_unstem_search^50000
@@ -268,6 +275,60 @@
         title_series_t^100
         text^10
       </str>
+      <str name="author_qf">
+        author_unstem_search^200
+        author_addl_unstem_search^50
+        author_t^20
+        author_addl_t
+      </str>
+      <str name="author_pf">
+        author_unstem_search^2000
+        author_addl_unstem_search^500
+        author_t^200
+        author_addl_t^10
+      </str>
+      <str name="title_qf">
+        title_unstem_search^50000
+        subtitle_unstem_search^25000
+        title_addl_unstem_search^10000
+        title_t^5000
+        subtitle_t^2500
+        title_addl_t^100
+        title_added_entry_unstem_search^50
+        title_added_entry_t^10
+        title_series_unstem_search^5
+        title_series_t
+      </str>
+      <str name="title_pf">
+        title_unstem_search^500000
+        subtitle_unstem_search^250000
+        title_addl_unstem_search^100000
+        title_t^50000
+        subtitle_t^25000
+        title_addl_t^1000
+        title_added_entry_unstem_search^500
+        title_added_entry_t^100
+        title_series_t^50
+        title_series_unstem_search^10
+      </str>
+      <str name="subject_qf">
+        subject_topic_unstem_search^200
+        subject_unstem_search^125
+        subject_topic_facet^100
+        subject_t^50
+        subject_addl_unstem_search^10
+        subject_addl_t
+      </str>
+      <str name="subject_pf">
+        subject_topic_unstem_search^2000
+        subject_unstem_search^1250
+        subject_t^1000
+        subject_topic_facet^500
+        subject_addl_unstem_search^100
+        subject_addl_t^10
+      </str>
+      
+      
       <int name="ps">3</int>
       <float name="tie">0.01</float>
 
@@ -311,241 +372,6 @@
       
       <str name="spellcheck">true</str>
       <str name="spellcheck.dictionary">default</str>
-      <str name="spellcheck.onlyMorePopular">true</str>
-      <str name="spellcheck.extendedResults">true</str>
-      <str name="spellcheck.collate">false</str>
-      <str name="spellcheck.count">5</str>
-    </lst>
-    <arr name="last-components">
-      <str>spellcheck</str>
-    </arr>
-  </requestHandler>
-  
-  <!--  Searches Authors only  -->
-  <requestHandler name="author_search" class="solr.SearchHandler" >
-    <lst name="defaults">
-      <str name="defType">dismax</str>
-      <str name="echoParams">explicit</str>
-      <str name="sort">score desc, pub_date_sort desc, title_sort asc</str>   
-      <str name="q.alt">*:*</str>
-      <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
-      <str name="qf">
-        author_unstem_search^200
-        author_addl_unstem_search^50
-        author_t^20
-        author_addl_t
-      </str>
-      <str name="pf">
-        author_unstem_search^2000
-        author_addl_unstem_search^500
-        author_t^200
-        author_addl_t^10
-      </str>
-      <int name="ps">3</int>
-      <float name="tie">0.01</float>
-
-      <!-- NOT using marc_display because it is large and will slow things down for search results -->
-      <str name="fl">
-        id, 
-        score,
-        author_display,
-        author_vern_display, 
-        format, 
-        isbn_t, 
-        language_facet, 
-        lc_callnum_display,
-        material_type_display, 
-        published_display,
-        published_vern_display,
-        pub_date,
-        title_display,
-        title_vern_display,
-        subject_topic_facet,
-        subject_geo_facet,
-        subject_era_facet,
-        subtitle_display,
-        subtitle_vern_display,
-        url_fulltext_display,
-        url_suppl_display,
-      </str>
-      
-      <str name="facet">true</str>
-      <str name="facet.mincount">1</str>
-      <str name="facet.limit">10</str>
-      <str name="facet.field">format</str>
-      <str name="facet.field">lc_1letter_facet</str>
-      <str name="facet.field">lc_alpha_facet</str>
-      <str name="facet.field">lc_b4cutter_facet</str>
-      <str name="facet.field">language_facet</str>
-      <str name="facet.field">pub_date</str>
-      <str name="facet.field">subject_era_facet</str>
-      <str name="facet.field">subject_geo_facet</str>
-      <str name="facet.field">subject_topic_facet</str>
-      
-      <str name="spellcheck">true</str>
-      <str name="spellcheck.dictionary">author</str>
-      <str name="spellcheck.onlyMorePopular">true</str>
-      <str name="spellcheck.extendedResults">true</str>
-      <str name="spellcheck.collate">false</str>
-      <str name="spellcheck.count">5</str>
-    </lst>
-    <arr name="last-components">
-      <str>spellcheck</str>
-    </arr>
-  </requestHandler>
-  
-  <!--  Searches Titles only  -->
-  <requestHandler name="title_search" class="solr.SearchHandler" >
-    <lst name="defaults">
-      <str name="defType">dismax</str>
-      <str name="echoParams">explicit</str>
-      <str name="sort">score desc, pub_date_sort desc, title_sort asc</str>   
-      <str name="q.alt">*:*</str>
-      <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
-      <str name="qf">
-        title_unstem_search^50000
-        subtitle_unstem_search^25000
-        title_addl_unstem_search^10000
-        title_t^5000
-        subtitle_t^2500
-        title_addl_t^100
-        title_added_entry_unstem_search^50
-        title_added_entry_t^10
-        title_series_unstem_search^5
-        title_series_t
-      </str>
-      <str name="pf">
-        title_unstem_search^500000
-        subtitle_unstem_search^250000
-        title_addl_unstem_search^100000
-        title_t^50000
-        subtitle_t^25000
-        title_addl_t^1000
-        title_added_entry_unstem_search^500
-        title_added_entry_t^100
-        title_series_t^50
-        title_series_unstem_search^10
-      </str>
-      <int name="ps">3</int>
-      <float name="tie">0.01</float>
-
-      <!-- NOT using marc_display because it is large and will slow things down for search results -->
-      <str name="fl">
-        id, 
-        score,
-        author_display,
-        author_vern_display, 
-        format, 
-        isbn_t, 
-        language_facet, 
-        lc_callnum_display,
-        material_type_display, 
-        published_display,
-        published_vern_display,
-        pub_date,
-        title_display,
-        title_vern_display,
-        subject_topic_facet,
-        subject_geo_facet,
-        subject_era_facet,
-        subtitle_display,
-        subtitle_vern_display,
-        url_fulltext_display,
-        url_suppl_display,
-      </str>
-      
-      <str name="facet">true</str>
-      <str name="facet.mincount">1</str>
-      <str name="facet.limit">10</str>
-      <str name="facet.field">format</str>
-      <str name="facet.field">lc_1letter_facet</str>
-      <str name="facet.field">lc_alpha_facet</str>
-      <str name="facet.field">lc_b4cutter_facet</str>
-      <str name="facet.field">language_facet</str>
-      <str name="facet.field">pub_date</str>
-      <str name="facet.field">subject_era_facet</str>
-      <str name="facet.field">subject_geo_facet</str>
-      <str name="facet.field">subject_topic_facet</str>
-      
-      <str name="spellcheck">true</str>
-      <str name="spellcheck.dictionary">title</str>
-      <str name="spellcheck.onlyMorePopular">true</str>
-      <str name="spellcheck.extendedResults">true</str>
-      <str name="spellcheck.collate">false</str>
-      <str name="spellcheck.count">5</str>
-    </lst>
-    <arr name="last-components">
-      <str>spellcheck</str>
-    </arr>
-  </requestHandler>
-  
-  <!--  Searches Subjects only  -->
-  <requestHandler name="subject_search" class="solr.SearchHandler" >
-    <lst name="defaults">
-      <str name="defType">dismax</str>
-      <str name="echoParams">explicit</str>
-      <str name="sort">score desc, pub_date_sort desc, title_sort asc</str>   
-      <str name="q.alt">*:*</str>
-      <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
-      <str name="qf">
-        subject_topic_unstem_search^200
-        subject_unstem_search^125
-        subject_topic_facet^100
-        subject_t^50
-        subject_addl_unstem_search^10
-        subject_addl_t
-      </str>
-      <str name="pf">
-        subject_topic_unstem_search^2000
-        subject_unstem_search^1250
-        subject_t^1000
-        subject_topic_facet^500
-        subject_addl_unstem_search^100
-        subject_addl_t^10
-      </str>
-      <int name="ps">3</int>
-      <float name="tie">0.01</float>
-      
-      <!-- NOT using marc_display because it is large and will slow things down for search results -->
-      <str name="fl">
-        id, 
-        score,
-        author_display,
-        author_vern_display, 
-        format, 
-        isbn_t, 
-        language_facet, 
-        lc_callnum_display,
-        material_type_display, 
-        published_display,
-        published_vern_display,
-        pub_date,
-        title_display,
-        title_vern_display,
-        subject_topic_facet,
-        subject_geo_facet,
-        subject_era_facet,
-        subtitle_display,
-        subtitle_vern_display,
-        url_fulltext_display,
-        url_suppl_display,
-      </str>
-      
-      <str name="facet">true</str>
-      <str name="facet.mincount">1</str>
-      <str name="facet.limit">10</str>
-      <str name="facet.field">format</str>
-      <str name="facet.field">lc_1letter_facet</str>
-      <str name="facet.field">lc_alpha_facet</str>
-      <str name="facet.field">lc_b4cutter_facet</str>
-      <str name="facet.field">language_facet</str>
-      <str name="facet.field">pub_date</str>
-      <str name="facet.field">subject_era_facet</str>
-      <str name="facet.field">subject_geo_facet</str>
-      <str name="facet.field">subject_topic_facet</str>
-      
-      <str name="spellcheck">true</str>
-      <str name="spellcheck.dictionary">subject</str>
       <str name="spellcheck.onlyMorePopular">true</str>
       <str name="spellcheck.extendedResults">true</str>
       <str name="spellcheck.collate">false</str>
