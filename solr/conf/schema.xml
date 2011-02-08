@@ -20,7 +20,7 @@
     <!-- boolean type: "true" or "false" -->
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true"/>
     <!--Binary data type. The data should be sent/retrieved in as Base64 encoded Strings -->
-    <fieldtype name="binary" class="solr.BinaryField"/>
+    <fieldType name="binary" class="solr.BinaryField"/>
     
     <!-- The optional sortMissingLast and sortMissingFirst attributes are
          currently supported on types that are sorted internally as strings.
@@ -172,7 +172,7 @@
     </fieldType>
 
     <!-- Analyzed Text, no Stemming or Synonyms -->
-    <fieldtype name="textNoStem" class="solr.TextField" positionIncrementGap="100">
+    <fieldType name="textNoStem" class="solr.TextField" positionIncrementGap="100">
       <analyzer type="index">
         <tokenizer class="solr.WhitespaceTokenizerFactory" />
         <filter class="schema.UnicodeNormalizationFilterFactory" version="icu4j" composed="false" remove_diacritics="true" remove_modifiers="true" fold="true" />
@@ -191,7 +191,7 @@
         <filter class="solr.LowerCaseFilterFactory" />
         <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
       </analyzer>
-    </fieldtype>
+    </fieldType>
 
     <!-- Less flexible matching, but less false matches.  Probably not ideal for product names, but may be good for SKUs.  Can insert dashes in the wrong place and still match. -->
     <fieldType name="textTight" class="solr.TextField" positionIncrementGap="100" >
