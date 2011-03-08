@@ -1,0 +1,71 @@
+[STATUS]
+Starting
+2011-03-08 18:51:50PM CET
+Starting Fedora Server instance
+[/STATUS]
+
+[STATUS]
+Starting
+2011-03-08 18:51:51PM CET
+Initializing Server
+[/STATUS]
+
+[STATUS]
+Starting
+2011-03-08 18:51:51PM CET
+Fedora Version: 3.4.2
+[/STATUS]
+
+[STATUS]
+Starting
+2011-03-08 18:51:51PM CET
+Fedora Build Date: 2011-01-20 00:34:20 UTC-0500
+[/STATUS]
+
+[STATUS]
+Starting
+2011-03-08 18:51:51PM CET
+Server Host Name: localhost
+[/STATUS]
+
+[STATUS]
+Starting
+2011-03-08 18:51:51PM CET
+Server Port: 8080
+[/STATUS]
+
+[STATUS]
+Starting
+2011-03-08 18:51:51PM CET
+Initializing Modules
+[/STATUS]
+
+[STATUS]
+Starting
+2011-03-08 18:51:52PM CET
+Post-Initializing Modules
+[/STATUS]
+
+[STATUS]
+Starting
+2011-03-08 18:51:54PM CET
+Initializing XACML Authorization Module
+[/STATUS]
+
+[STATUS]
+Started
+2011-03-08 18:51:56PM CET
+[/STATUS]
+
+[STATUS]
+Stopping
+2011-03-08 18:52:12PM CET
+Shutting down Fedora Server and modules
+[/STATUS]
+
+[STATUS]
+Stopped
+2011-03-08 18:52:12PM CET
+Shutdown Successful
+[/STATUS]
+
