@@ -20,7 +20,10 @@ To run this example configuration, use
 
   java -jar start.jar
 
-in this directory, and when Solr is started connect to 
+in this directory.  Note that java 1.6 must be invoked by the “java” command 
+because Fedora requires it.
+
+When jetty is finished initializing itself, Solr is available at 
 
   http://localhost:8983/solr/admin/
 
