@@ -1,22 +1,9 @@
-# Licensed to the Apache Software Foundation (ASF) under one or more
-# contributor license agreements.  See the NOTICE file distributed with
-# this work for additional information regarding copyright ownership.
-# The ASF licenses this file to You under the Apache License, Version 2.0
-# (the "License"); you may not use this file except in compliance with
-# the License.  You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-Solr example configuration
+HYDRA-JETTY
 --------------------------
+This is a copy of jetty pre-installed with various applications needed by hydra applications.
+Most notably, these include fedora (http://fedora-commons.org/) and solr (http://lucene.apache.org/solr/).  
 
-To run this example configuration, use 
+To run, use 
 
   java -jar start.jar
 
@@ -25,15 +12,16 @@ because Fedora requires it.
 
 When jetty is finished initializing itself, Solr is available at 
 
-  http://localhost:8983/solr/admin/
+  	http://localhost:8983/solr/admin/
 
-To add documents to the index, use the post.sh script in
-the exampledocs subdirectory (while Solr is running),
-for example:
+and fedora is available at 
 
-  cd exampledocs
-  ./post.sh *.xml
+	http://localhost:8983/fedora/
 
-See also README.txt in the solr subdirectory, and check
-http://wiki.apache.org/solr/SolrResources for a list of
-tutorials and introductory articles.
+You can see a list of all installed applications at http://localhost:8983
+
+You can also change the port jetty starts on by editing the file etc/jetty.xml and changing this line to indicate a different port number:
+
+<Set name="port"><SystemProperty name="jetty.port" default="8983"/></Set>
+
+
