@@ -47,6 +47,3 @@ The Solr Home directory typically contains the following subdirectories...
         specified in your solrconfig.xml or schema.xml (ie: Analyzers,
         Request Handlers, etc...)
 
-   bin/
-        This directory is optional.  It is the default location used for
-        keeping the replication scripts.
