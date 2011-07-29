@@ -35,7 +35,7 @@
         class="org.akubraproject.fs.FSBlobStore"
         singleton="true">
     <constructor-arg value="urn:example.org:fsObjectStore"/>
-    <constructor-arg value="fedora/default/data/objectStore"/>
+    <constructor-arg value="fedora/test/data/objectStore"/>
   </bean>
 
   <bean name="fsObjectStoreMapper"
@@ -56,7 +56,7 @@
         class="org.akubraproject.fs.FSBlobStore"
         singleton="true">
     <constructor-arg value="urn:example.org:fsDatastreamStore"/>
-    <constructor-arg value="fedora/default/data/datastreamStore"/>
+    <constructor-arg value="fedora/test/data/datastreamStore"/>
   </bean>
 
   <bean name="fsDatastreamStoreMapper"
