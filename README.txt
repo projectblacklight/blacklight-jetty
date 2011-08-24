@@ -5,18 +5,17 @@ Most notably, these include fedora (http://fedora-commons.org/) and solr (http:/
 
 To run, use 
 
-  java -jar start.jar
-
-in this directory.  Note that java 1.6 must be invoked by the “java” command 
-because Fedora requires it.
+  java -XX:+CMSPermGenSweepingEnabled -XX:+CMSClassUnloadingEnabled -XX:PermSize=64M -XX:MaxPermSize=128M -jar start.jar
 
 When jetty is finished initializing itself, Solr is available at 
 
-  	http://localhost:8983/solr/admin/
+  	http://localhost:8983/solr/development/admin/
+  	http://localhost:8983/solr/test/admin/
 
 and fedora is available at 
 
 	http://localhost:8983/fedora/
+        http://localhost:8983/fedora-test/
 
 You can see a list of all installed applications at http://localhost:8983
 
