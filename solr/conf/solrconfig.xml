@@ -922,6 +922,10 @@
          <str>nameOfCustomComponent2</str>
        </arr>
       -->
+    <arr name="last-components">
+      <str>spellcheck</str>
+    </arr>
+      
   </requestHandler>
 
   <!-- for requests to get a single document; use id=666 instead of q=id:666 -->
@@ -1321,11 +1325,30 @@
       -->
     <lst name="spellchecker">
       <str name="name">default</str>
-      <str name="field">name</str>
-      <str name="spellcheckIndexDir">spellchecker</str>
-      <!-- uncomment this to require terms to occur in 1% of the documents in order to be included in the dictionary
-      	<float name="thresholdTokenFrequency">.01</float>
-      -->
+      <str name="field">spell</str>
+      <str name="spellcheckIndexDir">./spell</str>
+      <str name="buildOnOptimize">true</str>
+    </lst>
+    <lst name="spellchecker">
+      <str name="name">author</str>
+      <str name="field">author_spell</str>
+      <str name="spellcheckIndexDir">./spell_author</str>
+      <str name="accuracy">0.7</str>
+      <str name="buildOnOptimize">true</str>
+    </lst>
+    <lst name="spellchecker">
+      <str name="name">subject</str>
+      <str name="field">subject_spell</str>
+      <str name="spellcheckIndexDir">./spell_subject</str>
+      <str name="accuracy">0.7</str>
+      <str name="buildOnOptimize">true</str>
+    </lst>
+    <lst name="spellchecker">
+      <str name="name">title</str>
+      <str name="field">title_spell</str>
+      <str name="spellcheckIndexDir">./spell_title</str>
+      <str name="accuracy">0.7</str>
+      <str name="buildOnOptimize">true</str>
     </lst>
 
     <!-- a spellchecker that uses a different distance measure -->

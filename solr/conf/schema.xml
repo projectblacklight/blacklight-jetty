@@ -368,6 +368,16 @@
       </analyzer>
     </fieldType>
 
+    <fieldType name="textSpell" class="solr.TextField" positionIncrementGap="100" >
+      <analyzer>
+        <tokenizer class="solr.StandardTokenizerFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt"/>
+        <filter class="solr.StandardFilterFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+      </analyzer>
+    </fieldType>
+
     <!-- charFilter + WhitespaceTokenizer  -->
     <!--
     <fieldType name="text_char_norm" class="solr.TextField" positionIncrementGap="100" >
@@ -574,7 +584,7 @@
    <dynamicField name="*_facet" type="string" indexed="true" stored="false" multiValued="true" />
    <dynamicField name="*_sort" type="alphaOnlySort" indexed="true" stored="false" multiValued="false" />
    <dynamicField name="*_unstem_search" type="text_general" indexed="true" stored="false" multiValued="true" />
-   <dynamicField name="*spell" type="text_general" indexed="true" stored="false" multiValued="true" />
+   <dynamicField name="*spell" type="textSpell" indexed="true" stored="false" multiValued="true" />
 
    <!-- uncomment the following to ignore any fields that don't already match an existing 
         field name or dynamic field, rather than reporting them as an error. 
