@@ -34,6 +34,11 @@ The Solr Home directory typically contains the following subdirectories...
         and schema.xml.  Any other optional configuration files would also 
         be kept here.
 
+  contrib/
+        This directory contains 'contrib' modules from the Solr 
+        example application. Libraries to load are configured in the 
+        ./config/solrconfig.xml.
+
    data/
         This directory is the default location where Solr will keep your
         index, and is used by the replication scripts for dealing with
