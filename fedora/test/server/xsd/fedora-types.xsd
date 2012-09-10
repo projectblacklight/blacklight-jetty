@@ -4,7 +4,8 @@
         xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
         xmlns:fedora-types="http://www.fedora.info/definitions/1/0/types/"
         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns="http://www.w3.org/2001/XMLSchema">
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
 
     <!--                                   -->
     <!-- API-A SOAP Request/Response Types -->
