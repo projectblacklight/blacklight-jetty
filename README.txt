@@ -27,5 +27,5 @@ You can also change the port jetty starts on by editing the file etc/jetty.xml a
 Included Versions
 -----------------
 jetty: 6.1.26
-solr: 3.5.0
+solr: 4.0.0
 fedora: 3.6.1
