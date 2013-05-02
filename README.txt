@@ -28,4 +28,4 @@ Included Versions
 -----------------
 jetty: 6.1.26
 solr: 4.0.0
-fedora: 3.6.1
+fedora: 3.6.2
