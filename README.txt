@@ -5,7 +5,7 @@ Most notably, these include fedora (http://fedora-commons.org/) and solr (http:/
 
 To run, use 
 
-  java -XX:+CMSPermGenSweepingEnabled -XX:+CMSClassUnloadingEnabled -XX:PermSize=64M -XX:MaxPermSize=128M -jar start.jar
+  java -XX:+CMSClassUnloadingEnabled -XX:PermSize=64M -XX:MaxPermSize=128M -jar start.jar
 
 When jetty is finished initializing itself, Solr is available at 
 
@@ -26,6 +26,6 @@ You can also change the port jetty starts on by editing the file etc/jetty.xml a
 
 Included Versions
 -----------------
-jetty: 6.1.26
+jetty: 8.1.8.v20121106
 solr: 4.0.0
 fedora: 3.6.2
