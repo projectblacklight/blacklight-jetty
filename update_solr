@@ -19,6 +19,12 @@ if [ ! -e solr-$SOLR_VERSION ]; then
 fi
 );
 
+
+if [ ! -e $SOLR_DIR ]; then
+  echo "Can't find solr!";
+  exit 1;
+fi
+
 cp -f $SOLR_DIR/dist/solr-$SOLR_VERSION.war webapps/solr.war
 
 rm -rf $SOLR_LIB_DIR
@@ -32,3 +38,4 @@ for lib in analysis-extras clustering langid extraction; do
   fi
   cp -R $SOLR_DIR/contrib/$lib $SOLR_LIB_DIR/contrib
 done
+echo $SOLR_VERSION > VERSION
